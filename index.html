@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cầm Đồ Vũ Trần | Uy Tín - Giải Ngân Nhanh Trong Ngày</title>
+  <meta name="description" content="Cầm Đồ Vũ Trần hỗ trợ cầm xe máy, ô tô, điện thoại, laptop, vàng và giấy tờ có giá. Quy trình nhanh gọn, định giá rõ ràng, bảo mật thông tin khách hàng." />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-soft: #151a23;
+      --card: rgba(255, 255, 255, .04);
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --line: rgba(255, 255, 255, .1);
+      --primary: #fbbf24;
+      --primary-soft: rgba(251, 191, 36, .12);
+      --danger: #ef4444;
+      --ok: #10b981;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(239, 68, 68, .16), transparent 24%),
+        radial-gradient(circle at 100% 0%, rgba(251, 191, 36, .14), transparent 30%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1140px, 92%); margin: 0 auto; }
+    .section { padding: 72px 0; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 17, 21, .9);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 72px;
+      gap: 14px;
+    }
+
+    .logo {
+      font-weight: 900;
+      letter-spacing: .4px;
+      color: var(--primary);
+      font-size: clamp(18px, 2.4vw, 24px);
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      color: #d1d5db;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .menu a {
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: .2s ease;
+      font-weight: 600;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .hero {
+      padding: 82px 0 60px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      border: 1px solid rgba(251, 191, 36, .28);
+      color: #fde68a;
+      background: var(--primary-soft);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      line-height: 1.08;
+      font-size: clamp(34px, 6vw, 64px);
+    }
+
+    .highlight { color: var(--primary); }
+    .lead { color: #d1d5db; margin-bottom: 22px; font-size: 18px; }
+
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--primary); color: #111827; }
+    .btn-secondary { border-color: var(--line); color: #fff; }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, .24);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(251, 191, 36, .12), rgba(255, 255, 255, .02));
+      border-color: rgba(251, 191, 36, .28);
+    }
+
+    .hero-image {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 20px 0 22px;
+      background: #111827;
+    }
+
+    .hero-fallback {
+      padding: 26px;
+      background: linear-gradient(135deg, rgba(127, 29, 29, .95), rgba(17, 24, 39, .98));
+      display: none;
+    }
+
+    .badges, .stats {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .badges { grid-template-columns: repeat(2, 1fr); }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+
+    .badge, .stat {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      padding: 14px;
+      font-weight: 600;
+    }
+
+    .stat { text-align: center; }
+    .stat b { display: block; color: var(--primary); font-size: 20px; }
+
+    .section-title { margin: 0 0 10px; font-size: clamp(30px, 4vw, 40px); }
+    .section-desc { margin: 0 0 26px; color: var(--muted); max-width: 780px; }
+
+    .grid-3, .grid-2, .service-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .service-btn {
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 18px;
+      text-align: left;
+      padding: 18px;
+      cursor: pointer;
+      transition: .2s ease;
+      font: inherit;
+    }
+
+    .service-btn:hover,
+    .service-btn.active {
+      transform: translateY(-2px);
+      border-color: rgba(251, 191, 36, .4);
+      background: rgba(251, 191, 36, .08);
+    }
+
+    .service-btn h3 { margin: 0 0 6px; font-size: 19px; }
+    .service-btn p { margin: 0; color: #d1d5db; font-size: 14px; }
+
+    .service-detail { display: none; }
+    .service-detail.active { display: block; }
+
+    .detail-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #d1d5db;
+    }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .pill {
+      background: var(--primary-soft);
+      border: 1px solid rgba(251, 191, 36, .26);
+      color: #fde68a;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .input, .textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .03);
+      color: var(--text);
+      padding: 13px;
+      font: inherit;
+    }
+
+    .textarea { min-height: 126px; resize: vertical; }
+    .helper { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+    .hotline {
+      color: var(--primary);
+      font-size: 30px;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+
+    .status {
+      margin-top: 12px;
+      min-height: 24px;
+      font-weight: 700;
+      color: #bfdbfe;
+    }
+
+    .status.ok { color: #86efac; }
+    .status.error { color: #fca5a5; }
+
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid var(--line);
+      padding: 24px 0 36px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .hero-wrap, .grid-3, .grid-2, .service-grid, .badges, .stats {
+        grid-template-columns: 1fr;
+      }
+      .menu { display: none; }
+      .hero { padding-top: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">CẦM ĐỒ VŨ TRẦN</a>
+      <nav class="menu" aria-label="Điều hướng chính">
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#dich-vu">Dịch vụ</a>
+        <a href="#uy-tin">Uy tín</a>
+        <a href="#nhanh-chong">Nhanh chóng</a>
+        <a href="#bao-mat">Bảo mật</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="gioi-thieu">
+      <div class="container hero-wrap">
+        <div>
+          <span class="tag">HỖ TRỢ NHANH • THỦ TỤC GỌN • BẢO MẬT THÔNG TIN</span>
+          <h1>Cầm đồ <span class="highlight">uy tín</span><br />Giải ngân nhanh trong ngày</h1>
+          <p class="lead">Nhận cầm xe máy, ô tô, điện thoại, laptop, vàng, đồng hồ và nhiều tài sản có giá trị khác. Quy trình rõ ràng, lãi suất minh bạch, đội ngũ hỗ trợ tận tâm.</p>
+
+          <div class="hero-image">
+            <img src="banner-camdo-vutran.png" alt="Banner Cầm Đồ Vũ Trần" onerror="this.style.display='none'; document.getElementById('bannerFallback').style.display='block';" />
+            <div id="bannerFallback" class="hero-fallback">
+              <strong style="color:#fde68a">CẦM ĐỒ VŨ TRẦN</strong>
+              <h2 style="margin:8px 0 10px; font-size:clamp(24px,4vw,42px)">UY TÍN • NHANH CHÓNG • BẢO MẬT</h2>
+              <p style="margin:0 0 14px; color:#e5e7eb">Nhận cầm sổ đỏ, ô tô, điện thoại, laptop, vàng, trang sức. Tư vấn nhanh trong 5 phút.</p>
+              <div class="pill-row">
+                <span class="pill">Hotline 0798 910 111</span>
+                <span class="pill">Zalo 0362 168 238</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btns">
+            <a class="btn btn-primary" href="tel:0798910111">Gọi ngay 0798 910 111</a>
+            <a class="btn btn-secondary" href="#lien-he">Đăng ký tư vấn nhanh</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><b>15+</b>Năm kinh nghiệm</div>
+            <div class="stat"><b>5000+</b>Khách hàng đã hỗ trợ</div>
+            <div class="stat"><b>24/7</b>Tư vấn linh hoạt</div>
+          </div>
+        </div>
+
+        <aside class="card hero-card" id="uy-tin">
+          <h3 style="margin-top:0">Lý do khách chọn chúng tôi</h3>
+          <div class="badges">
+            <div class="badge">✔ Định giá minh bạch, rõ điều khoản</div>
+            <div class="badge">✔ Hỗ trợ nhanh theo nhu cầu thực tế</div>
+            <div class="badge">✔ Nhận đa dạng tài sản giá trị</div>
+            <div class="badge">✔ Có biên nhận và kiểm kê chi tiết</div>
+          </div>
+          <p class="hotline">Hotline: 0798 910 111</p>
+          <p><strong>Zalo:</strong> <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">0362 168 238</a></p>
+          <p style="color:#fca5a5; font-size:14px; margin-bottom:0">* Có thể thay đổi thông tin liên hệ theo số thực tế của bạn.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="dich-vu">
+      <div class="container">
+        <h2 class="section-title">Nhận cầm các loại tài sản</h2>
+        <p class="section-desc">Chọn loại tài sản để xem mô tả dịch vụ và giấy tờ thường cần chuẩn bị. Nội dung có thể điều chỉnh linh hoạt theo mô hình hoạt động của bạn.</p>
+
+        <div class="service-grid" role="tablist" aria-label="Danh mục dịch vụ">
+          <button class="service-btn active" onclick="showService('xemay', this)">
+            <h3>Xe máy</h3>
+            <p>Cầm cavet/xe chính chủ, hỗ trợ định giá nhanh.</p>
+          </button>
+          <button class="service-btn" onclick="showService('oto', this)">
+            <h3>Ô tô</h3>
+            <p>Nhận xe cá nhân, xe công ty theo hồ sơ hợp lệ.</p>
+          </button>
+          <button class="service-btn" onclick="showService('dienthoai', this)">
+            <h3>Điện thoại & Laptop</h3>
+            <p>Thiết bị còn hoạt động tốt, kiểm tra tại chỗ.</p>
+          </button>
+          <button class="service-btn" onclick="showService('vang', this)">
+            <h3>Vàng & Trang sức</h3>
+            <p>Định giá theo tuổi vàng và thị trường.</p>
+          </button>
+          <button class="service-btn" onclick="showService('dongho', this)">
+            <h3>Đồng hồ cao cấp</h3>
+            <p>Nhận thương hiệu phổ biến có giá trị sưu tầm.</p>
+          </button>
+          <button class="service-btn" onclick="showService('giayto', this)">
+            <h3>Giấy tờ có giá</h3>
+            <p>Sổ đỏ, hợp đồng, hồ sơ pháp lý hợp lệ.</p>
+          </button>
+        </div>
+
+        <div class="card" style="margin-top: 18px;">
+          <article class="service-detail active" id="detail-xemay">
+            <h3>Chi tiết cầm xe máy</h3>
+            <ul class="detail-list">
+              <li>Tiếp nhận xe máy còn hoạt động, giấy tờ rõ ràng.</li>
+              <li>Định giá theo đời xe, dòng xe và tình trạng thực tế.</li>
+              <li>Có biên nhận và niêm phong tài sản theo quy trình.</li>
+            </ul>
+          </article>
+          <article class="service-detail" id="detail-oto">
+            <h3>Chi tiết cầm ô tô</h3>
+            <ul class="detail-list">
+              <li>Tiếp nhận ô tô cá nhân/doanh nghiệp với hồ sơ hợp lệ.</li>
+              <li>Tư vấn phương án phù hợp: cầm xe giữ xe hoặc giữ giấy tờ.</li>
+              <li>Kho bãi có giám sát, đảm bảo an toàn tài sản.</li>
+            </ul>
+          </article>
+          <article class="service-detail" id="detail-dienthoai">
+            <h3>Chi tiết cầm điện thoại & laptop</h3>
+            <ul class="detail-list">
+              <li>Nhận thiết bị còn hoạt động, không khóa iCloud/MDM.</li>
+              <li>Kiểm tra nhanh cấu hình và ngoại quan trong 5–10 phút.</li>
+              <li>Giải ngân ngay sau khi xác nhận thông tin cần thiết.</li>
+            </ul>
+          </article>
+          <article class="service-detail" id="detail-vang">
+            <h3>Chi tiết cầm vàng & trang sức</h3>
+            <ul class="detail-list">
+              <li>Kiểm tra tuổi vàng bằng thiết bị chuyên dụng.</li>
+              <li>Định giá minh bạch theo giá thị trường tại thời điểm giao dịch.</li>
+              <li>Bảo quản tài sản theo chuẩn niêm phong kín.</li>
+            </ul>
+          </article>
+          <article class="service-detail" id="detail-dongho">
+            <h3>Chi tiết cầm đồng hồ cao cấp</h3>
+            <ul class="detail-list">
+              <li>Ưu tiên đồng hồ chính hãng có phụ kiện đầy đủ.</li>
+              <li>Định giá theo thương hiệu, đời máy và tình trạng sử dụng.</li>
+              <li>Cam kết lưu kho cẩn thận, hạn chế trầy xước.</li>
+            </ul>
+          </article>
+          <article class="service-detail" id="detail-giayto">
+            <h3>Chi tiết cầm giấy tờ có giá</h3>
+            <ul class="detail-list">
+              <li>Tiếp nhận hồ sơ pháp lý rõ ràng, đúng chủ thể giao dịch.</li>
+              <li>Tư vấn kỹ điều khoản hợp đồng, tránh phát sinh mập mờ.</li>
+              <li>Bảo mật tuyệt đối thông tin và hồ sơ khách hàng.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nhanh-chong">
+      <div class="container">
+        <h2 class="section-title">Quy trình nhanh chóng chỉ 3 bước</h2>
+        <p class="section-desc">Tối ưu quy trình để khách hàng tiết kiệm thời gian, nhận hỗ trợ nhanh mà vẫn đầy đủ minh bạch.</p>
+        <div class="grid-3">
+          <div class="card"><h3>1) Liên hệ</h3><p>Gọi điện hoặc nhắn Zalo để mô tả tài sản và nhu cầu tài chính.</p></div>
+          <div class="card"><h3>2) Định giá</h3><p>Kiểm tra thông tin, tư vấn điều khoản và mức hỗ trợ dự kiến.</p></div>
+          <div class="card"><h3>3) Hoàn tất</h3><p>Ký nhận minh bạch, nhận tiền nhanh trong ngày khi hồ sơ hợp lệ.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bao-mat">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 style="margin-top:0">Cam kết bảo mật</h2>
+          <ul class="detail-list">
+            <li>Không chia sẻ thông tin khách hàng cho bên thứ ba khi chưa được phép.</li>
+            <li>Hồ sơ được lưu trữ nội bộ, có kiểm soát truy cập.</li>
+            <li>Tài sản được kiểm kê và niêm phong trước khi bàn giao lưu kho.</li>
+            <li>Có biên nhận đầy đủ để khách dễ đối soát bất kỳ lúc nào.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2 style="margin-top:0">Khu vực phục vụ</h2>
+          <p>Hỗ trợ linh hoạt tại TP.HCM và khu vực lân cận (có thể tùy chỉnh theo hoạt động của bạn).</p>
+          <div class="pill-row">
+            <span class="pill">TP.HCM</span>
+            <span class="pill">Bình Dương</span>
+            <span class="pill">Đồng Nai</span>
+            <span class="pill">Long An</span>
+          </div>
+          <p style="margin-top:14px;"><strong>Giờ làm việc:</strong> 07:00 - 21:00 mỗi ngày.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lien-he">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 style="margin-top:0">Thông tin liên hệ</h2>
+          <p><strong>Hotline:</strong> <a href="tel:0798910111">0798 910 111</a></p>
+          <p><strong>Zalo:</strong> <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">0362 168 238</a></p>
+          <p><strong>Facebook:</strong> facebook.com/tenfanpage</p>
+          <p><strong>Địa chỉ:</strong> Cập nhật địa chỉ thực tế của bạn tại đây.</p>
+          <div class="btns" style="margin-top:14px;">
+            <a class="btn btn-primary" href="tel:0798910111">Gọi ngay</a>
+            <a class="btn btn-secondary" href="https://zalo.me/0362168238" target="_blank" rel="noopener">Nhắn Zalo</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 style="margin-top:0">Gửi yêu cầu tư vấn nhanh</h2>
+          <form id="consultForm" novalidate>
+            <div class="grid-2" style="grid-template-columns:1fr 1fr; gap:12px;">
+              <input class="input" type="text" name="name" placeholder="Họ và tên" required />
+              <input class="input" type="tel" name="phone" placeholder="Số điện thoại" required />
+            </div>
+            <div style="margin-top:12px;">
+              <input class="input" type="text" name="asset" placeholder="Loại tài sản cần hỗ trợ" />
+            </div>
+            <div style="margin-top:12px;">
+              <textarea class="textarea" name="message" placeholder="Mô tả nhanh nhu cầu của bạn..."></textarea>
+            </div>
+            <button class="btn btn-primary" style="margin-top:12px;" type="submit">Gửi thông tin</button>
+            <p class="helper">* Form này đang ở chế độ demo frontend. Có thể tích hợp Google Sheet/Formspree/API theo nhu cầu.</p>
+            <div class="status" id="formStatus" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 CẦM ĐỒ VŨ TRẦN. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function showService(key, buttonEl) {
+      document.querySelectorAll('.service-detail').forEach(function(panel) {
+        panel.classList.remove('active');
+      });
+      var target = document.getElementById('detail-' + key);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      document.querySelectorAll('.service-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      if (buttonEl) {
+        buttonEl.classList.add('active');
+      }
+    }
+
+    (function navActiveState() {
+      var links = document.querySelectorAll('.menu a');
+      var sections = Array.from(links)
+        .map(function(link) { return document.querySelector(link.getAttribute('href')); })
+        .filter(Boolean);
+
+      function update() {
+        var fromTop = window.scrollY + 120;
+        links.forEach(function(link) {
+          var section = document.querySelector(link.getAttribute('href'));
+          if (!section) return;
+          var active = section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop;
+          link.classList.toggle('active', active);
+        });
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      if (sections.length) update();
+    })();
+
+    (function formDemo() {
+      var form = document.getElementById('consultForm');
+      var status = document.getElementById('formStatus');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        status.className = 'status';
+
+        var name = form.elements.name.value.trim();
+        var phone = form.elements.phone.value.trim();
+        if (!name || !phone) {
+          status.textContent = 'Vui lòng nhập họ tên và số điện thoại để được hỗ trợ.';
+          status.classList.add('error');
+          return;
+        }
+
+        var cleanedPhone = phone.replace(/\D/g, '');
+        if (cleanedPhone.length < 9) {
+          status.textContent = 'Số điện thoại chưa hợp lệ. Vui lòng kiểm tra lại.';
+          status.classList.add('error');
+          return;
+        }
+
+        status.textContent = 'Đã ghi nhận thông tin. Chúng tôi sẽ liên hệ với bạn sớm nhất!';
+        status.classList.add('ok');
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
