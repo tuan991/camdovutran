@@ -317,11 +317,12 @@
           <div class="btns">
             <a class="btn btn-primary" href="tel:0798910111">Gọi ngay 0798 910 111</a>
             <a class="btn btn-secondary" href="#lien-he">Đăng ký tư vấn nhanh</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/people/C%E1%BA%A7m-%C4%90%E1%BB%93-V%C5%A9-Tr%E1%BA%A7n/61585325427683/" target="_blank" rel="noopener">Facebook</a>
           </div>
 
           <div class="stats">
-            <div class="stat"><b>15+</b>Năm kinh nghiệm</div>
-            <div class="stat"><b>5000+</b>Khách hàng đã hỗ trợ</div>
+            <div class="stat"><b>5+</b>Năm kinh nghiệm</div>
+            <div class="stat"><b>500+</b>Khách hàng đã hỗ trợ</div>
             <div class="stat"><b>24/7</b>Tư vấn linh hoạt</div>
           </div>
         </div>
@@ -336,7 +337,7 @@
           </div>
           <p class="hotline">Hotline: 0798 910 111</p>
           <p><strong>Zalo:</strong> <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">0362 168 238</a></p>
-          <p style="color:#fca5a5; font-size:14px; margin-bottom:0">* Có thể thay đổi thông tin liên hệ theo số thực tế của bạn.</p>
+          <p><strong>Facebook:</strong> <a href="https://www.facebook.com/people/C%E1%BA%A7m-%C4%90%E1%BB%93-V%C5%A9-Tr%E1%BA%A7n/61585325427683/" target="_blank" rel="noopener">Cầm Đồ Vũ Trần</a></p>
         </aside>
       </div>
     </section>
@@ -347,27 +348,27 @@
         <p class="section-desc">Chọn loại tài sản để xem mô tả dịch vụ và giấy tờ thường cần chuẩn bị. Nội dung có thể điều chỉnh linh hoạt theo mô hình hoạt động của bạn.</p>
 
         <div class="service-grid" role="tablist" aria-label="Danh mục dịch vụ">
-          <button class="service-btn active" onclick="showService('xemay', this)">
+          <button class="service-btn active" type="button" onclick="showService('xemay', this)">
             <h3>Xe máy</h3>
             <p>Cầm cavet/xe chính chủ, hỗ trợ định giá nhanh.</p>
           </button>
-          <button class="service-btn" onclick="showService('oto', this)">
+          <button class="service-btn" type="button" onclick="showService('oto', this)">
             <h3>Ô tô</h3>
             <p>Nhận xe cá nhân, xe công ty theo hồ sơ hợp lệ.</p>
           </button>
-          <button class="service-btn" onclick="showService('dienthoai', this)">
+          <button class="service-btn" type="button" onclick="showService('dienthoai', this)">
             <h3>Điện thoại & Laptop</h3>
             <p>Thiết bị còn hoạt động tốt, kiểm tra tại chỗ.</p>
           </button>
-          <button class="service-btn" onclick="showService('vang', this)">
+          <button class="service-btn" type="button" onclick="showService('vang', this)">
             <h3>Vàng & Trang sức</h3>
             <p>Định giá theo tuổi vàng và thị trường.</p>
           </button>
-          <button class="service-btn" onclick="showService('dongho', this)">
+          <button class="service-btn" type="button" onclick="showService('dongho', this)">
             <h3>Đồng hồ cao cấp</h3>
             <p>Nhận thương hiệu phổ biến có giá trị sưu tầm.</p>
           </button>
-          <button class="service-btn" onclick="showService('giayto', this)">
+          <button class="service-btn" type="button" onclick="showService('giayto', this)">
             <h3>Giấy tờ có giá</h3>
             <p>Sổ đỏ, hợp đồng, hồ sơ pháp lý hợp lệ.</p>
           </button>
@@ -407,15 +408,15 @@
             </ul>
           </article>
           <article class="service-detail" id="detail-dongho">
-            <h3>Chi tiết cầm đồng hồ cao cấp</h3>
+            <h3>Chi tiết cầm sổ đỏ / giấy tờ nhà đất</h3>
             <ul class="detail-list">
-              <li>Ưu tiên đồng hồ chính hãng có phụ kiện đầy đủ.</li>
-              <li>Định giá theo thương hiệu, đời máy và tình trạng sử dụng.</li>
-              <li>Cam kết lưu kho cẩn thận, hạn chế trầy xước.</li>
+              <li>Tiếp nhận tư vấn với sổ đỏ, sổ hồng và giấy tờ nhà đất có thông tin pháp lý rõ ràng</li>
+              <li>Khách nên chuẩn bị CCCD/CMND, giấy chứng nhận quyền sử dụng đất hoặc hồ sơ liên quan.</li>
+              <li>Bảo mật thông tin khách hàng và hồ sơ nhà đất trong suốt quá trình tiếp nhận.</li>
             </ul>
           </article>
           <article class="service-detail" id="detail-giayto">
-            <h3>Chi tiết cầm giấy tờ có giá</h3>
+            <h3>Chi tiết cầm giấy tờ có giá và tài sản có giá.</h3>
             <ul class="detail-list">
               <li>Tiếp nhận hồ sơ pháp lý rõ ràng, đúng chủ thể giao dịch.</li>
               <li>Tư vấn kỹ điều khoản hợp đồng, tránh phát sinh mập mờ.</li>
@@ -469,29 +470,37 @@
           <h2 style="margin-top:0">Thông tin liên hệ</h2>
           <p><strong>Hotline:</strong> <a href="tel:0798910111">0798 910 111</a></p>
           <p><strong>Zalo:</strong> <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">0362 168 238</a></p>
-          <p><strong>Facebook:</strong> facebook.com/tenfanpage</p>
-          <p><strong>Địa chỉ:</strong> Cập nhật địa chỉ thực tế của bạn tại đây.</p>
+          <p><strong>Facebook:</strong> <a href="https://www.facebook.com/people/C%E1%BA%A7m-%C4%90%E1%BB%93-V%C5%A9-Tr%E1%BA%A7n/61585325427683/" target="_blank" rel="noopener">Cầm Đồ Vũ Trần</a></p>
+          <p><strong>Địa chỉ:</strong> 10°59'25.3"N 106°51'42.4"E.</p>
           <div class="btns" style="margin-top:14px;">
             <a class="btn btn-primary" href="tel:0798910111">Gọi ngay</a>
             <a class="btn btn-secondary" href="https://zalo.me/0362168238" target="_blank" rel="noopener">Nhắn Zalo</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/people/C%E1%BA%A7m-%C4%90%E1%BB%93-V%C5%A9-Tr%E1%BA%A7n/61585325427683/" target="_blank" rel="noopener">Nhắn Facebook</a>
           </div>
         </div>
 
         <div class="card">
           <h2 style="margin-top:0">Gửi yêu cầu tư vấn nhanh</h2>
-          <form id="consultForm" novalidate>
+          <form id="consultForm" action="https://formsubmit.co/ajax/anh8444446@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Khách gửi yêu cầu tư vấn - Cầm Đồ Vũ Trần">
+            <input type="hidden" name="_template" value="table">
+
             <div class="grid-2" style="grid-template-columns:1fr 1fr; gap:12px;">
-              <input class="input" type="text" name="name" placeholder="Họ và tên" required />
-              <input class="input" type="tel" name="phone" placeholder="Số điện thoại" required />
+              <input class="input" type="text" name="ho_ten" placeholder="Họ và tên" required />
+              <input class="input" type="tel" name="so_dien_thoai" placeholder="Số điện thoại" required />
             </div>
+
             <div style="margin-top:12px;">
-              <input class="input" type="text" name="asset" placeholder="Loại tài sản cần hỗ trợ" />
+              <input class="input" type="text" name="loai_tai_san" placeholder="Loại tài sản cần hỗ trợ" />
             </div>
+
             <div style="margin-top:12px;">
-              <textarea class="textarea" name="message" placeholder="Mô tả nhanh nhu cầu của bạn..."></textarea>
+              <textarea class="textarea" name="noi_dung" placeholder="Mô tả nhanh nhu cầu của bạn..."></textarea>
             </div>
+
             <button class="btn btn-primary" style="margin-top:12px;" type="submit">Gửi thông tin</button>
-            <p class="helper">* Form này đang ở chế độ demo frontend. Có thể tích hợp Google Sheet/Formspree/API theo nhu cầu.</p>
+            <p class="helper">Thông tin sẽ được gửi về email: <strong>anh8444446@gmail.com</strong></p>
             <div class="status" id="formStatus" aria-live="polite"></div>
           </form>
         </div>
@@ -500,7 +509,7 @@
   </main>
 
   <footer>
-    <div class="container">© 2026 CẦM ĐỒ VŨ TRẦN. All rights reserved.</div>
+    <div class="container">© 2026 CẦM ĐỒ VŨ TRẦN.</div>
   </footer>
 
   <script>
@@ -541,32 +550,53 @@
       if (sections.length) update();
     })();
 
-    (function formDemo() {
+    (function liveMailForm() {
       var form = document.getElementById('consultForm');
       var status = document.getElementById('formStatus');
 
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
         status.className = 'status';
+        status.textContent = '';
 
-        var name = form.elements.name.value.trim();
-        var phone = form.elements.phone.value.trim();
-        if (!name || !phone) {
+        var hoTen = form.elements.ho_ten.value.trim();
+        var soDienThoai = form.elements.so_dien_thoai.value.trim();
+
+        if (!hoTen || !soDienThoai) {
           status.textContent = 'Vui lòng nhập họ tên và số điện thoại để được hỗ trợ.';
           status.classList.add('error');
           return;
         }
 
-        var cleanedPhone = phone.replace(/\D/g, '');
+        var cleanedPhone = soDienThoai.replace(/\D/g, '');
         if (cleanedPhone.length < 9) {
           status.textContent = 'Số điện thoại chưa hợp lệ. Vui lòng kiểm tra lại.';
           status.classList.add('error');
           return;
         }
 
-        status.textContent = 'Đã ghi nhận thông tin. Chúng tôi sẽ liên hệ với bạn sớm nhất!';
-        status.classList.add('ok');
-        form.reset();
+        var formData = new FormData(form);
+
+        try {
+          var response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+          });
+
+          var result = await response.json();
+
+          if (result.success === 'true' || result.success === true) {
+            status.textContent = 'Gửi thành công. Chúng tôi sẽ liên hệ sớm.';
+            status.classList.add('ok');
+            form.reset();
+          } else {
+            status.textContent = 'Gửi chưa thành công. Vui lòng thử lại hoặc gọi trực tiếp.';
+            status.classList.add('error');
+          }
+        } catch (error) {
+          status.textContent = 'Có lỗi kết nối. Vui lòng thử lại hoặc gọi trực tiếp.';
+          status.classList.add('error');
+        }
       });
     })();
   </script>
